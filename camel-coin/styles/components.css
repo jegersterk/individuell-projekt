@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@layer components {
+    .test {
+        @apply bg-green-900 text-6xl
+    }
+
+    .test:hover {
+        @apply bg-amber-300
+    }
+}

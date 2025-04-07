@@ -3,6 +3,11 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  --primary-bg-color: rgb(200, 210, 105);
+  --secondary-bg-color: rgb(124, 124, 124);
+  
+  --primary-color: black;
 }
 
 @theme inline {
