@@ -7,8 +7,6 @@ assignees: ''
 
 ---
 
-User story: User story Title (Specific feature or goal)
-
 As a [type of user],
 I want to [do something specific],
 so that [reason/value].
