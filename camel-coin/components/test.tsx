@@ -1,5 +1,5 @@
 export default function Test(){
     return(
-        <h1 className="test">hey there buddy</h1>
+        <h1 className="bg-primary text-foreground">hey there buddy</h1>
     )
 }
