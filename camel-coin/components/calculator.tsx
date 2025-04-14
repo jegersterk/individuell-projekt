@@ -1,32 +1,31 @@
-'use client';
-import {useState} from "react";
 
-export default function Calculator() {
-    const [data,setData] = useState<string>("Loading...");
-    // const api_url : string = "https://api.riksbank.se/swea/v1/CalendarDays/{from}";
-    console.log("ass"); 
-    const api_url: string = "https://api.riksbank.se/swea/v1/Series/ExchangeRateSeries";
-    async function fetch_url() {
-        try {
-            const response = await fetch(api_url);
-            console.log("response here: ", response);
-            if (!response.ok) { throw new Error(`HTTP error! ${response.status}`); }
-            const data = await response.json();
-            const dataFiltered = data.filter((item:any) => item.seriesClosed === false);
-            console.log("data is here: ", dataFiltered);
-            setData(dataFiltered);  
-        } catch (e) {
-            console.error("error fetching data: ", e);
-        }
-    }
-    fetch_url();
-    return (
-        <div>
-            <select>
-                <option value="">Select Currency</option>
-                {/* {} */}
-                {data}
-            </select>
-        </div>
-    );
+import { fetchSeriesId, fetchCurrencyCodes } from "@/api/exchangeRateSeries";
+
+export default async function Calculator() {
+	const seriesId = await fetchSeriesId();
+	const currencyCodes = await fetchCurrencyCodes();
+	// const [currencyCode, setCurrencyCode] = useState<string>("");
+	
+	return (
+		<div className="w-96 h-70 bg-amber-900 border-2 flex flex-row">
+			<div className="bg-amber-950">
+				<input type="text" />
+			<select className="">
+				<option value="">Select Currency</option>
+				{currencyCodes.map((item: string) => (
+					<option className="bg-primary" value={item}>{item}</option>
+				))}
+			</select>
+			</div>
+			<div className="bg-amber-950">
+				<input type="number" placeholder="insert value"/>
+			<select className="">
+				<option value="">Select Currency</option>
+				{currencyCodes.map((item: string) => (
+					<option className="bg-primary" value={item}>{item}</option>
+				))}
+			</select>
+			</div>
+		</div>
+	);
 }
