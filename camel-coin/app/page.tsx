@@ -1,4 +1,3 @@
-import Test from "../components/test";
 import "../styles/globals.css"
 import { Metadata } from "next";
 
@@ -9,7 +8,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div>
-      <Test/>
+      <h1>Home</h1>
     </div>
   );
 }

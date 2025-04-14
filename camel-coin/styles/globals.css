@@ -6,12 +6,16 @@
 
   --primary-bg-color: rgb(203, 216, 89);
   --secondary-bg-color: rgb(227, 211, 41);
+  --tertiary-bg-color: rgb(199, 169, 61);
+--current-page-bg-color: rgb(182, 155, 59);
   --primary-color: black;
 }
 
 @theme inline {
   --color-primary: var(--primary-bg-color);
   --color-secondary: var(--secondary-bg-color);
+  --color-tertiary: var(--tertiary-bg-color);
+  --color-current-page: var(--current-page-bg-color);
   --color-foreground: var(--primary-color);
 
   --font-sans: var(--font-geist-sans);
@@ -21,7 +25,9 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --primary-bg-color: #393939;
-    --secondary-bg-color: #5b5f41;
+    --secondary-bg-color: #7a7327;
+	--tertiary-bg-color: #9ca271;
+	--current-page-bg-color: #ae795b;
 	--primary-color: rgb(255, 255, 255);
   }
 }
