@@ -1,31 +1,10 @@
-
 import { fetchSeriesId, fetchCurrencyCodes } from "@/api/exchangeRateSeries";
+import { fetchCrossRates } from "@/api/crossRates";
+import ClientCalculator from "./clientCalculator";
 
-export default async function Calculator() {
-	const seriesId = await fetchSeriesId();
-	const currencyCodes = await fetchCurrencyCodes();
-	// const [currencyCode, setCurrencyCode] = useState<string>("");
-	
-	return (
-		<div className="w-96 h-70 bg-amber-900 border-2 flex flex-row">
-			<div className="bg-amber-950">
-				<input type="text" />
-			<select className="">
-				<option value="">Select Currency</option>
-				{currencyCodes.map((item: string) => (
-					<option className="bg-primary" value={item}>{item}</option>
-				))}
-			</select>
-			</div>
-			<div className="bg-amber-950">
-				<input type="number" placeholder="insert value"/>
-			<select className="">
-				<option value="">Select Currency</option>
-				{currencyCodes.map((item: string) => (
-					<option className="bg-primary" value={item}>{item}</option>
-				))}
-			</select>
-			</div>
-		</div>
+export default async function Calculator(){
+	const currencyCodes : string[] = await fetchCurrencyCodes();
+	return(
+		<ClientCalculator currencyCodes={currencyCodes}/>
 	);
 }
