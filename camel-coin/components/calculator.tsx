@@ -1,4 +1,4 @@
-import { fetchSeriesId, fetchCurrencyCodes } from "@/api/exchangeRateSeries";
+import { fetchCurrencyCodes } from "@/api/exchangeRateSeries";
 import { fetchCrossRates } from "@/api/crossRates";
 import ClientCalculator from "./clientCalculator";
 

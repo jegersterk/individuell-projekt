@@ -1,6 +1,5 @@
 'use client'
 
-
 interface ClientCalculatorProps{
 	currencyCodes : string[];
 }
@@ -22,7 +21,7 @@ export default function ClientCalculator({ currencyCodes }: ClientCalculatorProp
 			<select className="">
 				{/* <option value="">Select Currency</option> */}
 				{currencyCodes.map((item: string) => (
-					<option className="bg-primary" value={item}>{item}</option>
+					<option className="bg-primary" key={item} value={item}>{item}</option>
 				))}
 			</select>
 			</div>
