@@ -1,4 +1,5 @@
 'use client'
+import IconConverter from "./iconConverter";
 
 interface ClientCalculatorProps{
 	currencyCodes : string[];
@@ -7,21 +8,22 @@ interface ClientCalculatorProps{
 export default function ClientCalculator({ currencyCodes }: ClientCalculatorProps) {	
 	console.log(currencyCodes)
 	return (
-		<div className="w-96 h-70 bg-amber-900 border-2 flex flex-row">
-			<div className="bg-amber-950">
-			<input type="number" placeholder="heya"/>
-			<select className="">
+		<div className="w-[40rem] h-70 bg-amber-900 flex flex-row justify-between">
+			<div className="bg-amber-950 flex flex-col justify-center gap-1">
+			<input className="bg-gray-500" type="number" placeholder="heya"/>
+			<select className="bg-white">
 				{currencyCodes.map((item: string) => (
-					<option className="bg-primary" value={item}>{item}</option>
+					<option className="bg-primary" key={item} value={item}>{item}</option>
 				))}
 			</select>
 			</div>
-			<div className="bg-amber-950">
-				<input type="number" placeholder="insert value"/>
-			<select className="">
+			{/* <IconConverter/> */}
+			<div className="bg-amber-950 flex flex-col justify-center gap-1">
+				<input className="bg-gray-500" type="number" placeholder="insert value"/>
+			<select className="bg-white">
 				{/* <option value="">Select Currency</option> */}
 				{currencyCodes.map((item: string) => (
-					<option className="bg-primary" key={item} value={item}>{item}</option>
+					<option className="bg-primary border-0" key={item} value={item}>{item}</option>
 				))}
 			</select>
 			</div>

@@ -1,4 +1,5 @@
 
+// https://developer.api.riksbank.se
 // "https://api.riksbank.se/swea/v1/CrossRates/{seriesId1}/{seriesId2}/{from}"
 // let api_url_init :string = "https://api.riksbank.se/swea/v1/CrossRates/"
 
